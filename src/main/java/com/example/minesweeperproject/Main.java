@@ -31,7 +31,6 @@ public class Main extends Application {
     private Label unflaggedMinesLabel;  // zobrazí počet neoznačených mín
     private Label clickCountLabel;      // zobrazí počet kliknutí
     private Button resetButton;         // tlačidlo na resetovanie hry
-    private boolean firstClick = true;  // indikátor prvého kliknutia
 
     //premenné pre prácu s časom
     private Label timerLabel;                   // zobrazí čas
@@ -39,6 +38,7 @@ public class Main extends Application {
     private int secondsElapsed;                 // uplynutý čas v sekundách
     private boolean timerStarted = false;       // príznak, či sa časovač spustil
 
+    private boolean firstClick = true;  // indikátor prvého kliknutia
 
     public Main() {
         this(10, 10, 10);   // Predvolená hra: 10x10 s 10 mínami
@@ -75,7 +75,7 @@ public class Main extends Application {
         root.setAlignment(Pos.CENTER);
 
         // výpočet veľkosti okna
-        double sceneWidth = 40 * cols + 20;     // 20 = dodatočný priestor na padding
+        double sceneWidth = 40 * cols;     // 20 = dodatočný priestor na padding
         double sceneHeight = 40 * rows + 100;   // 100 = dodatočný priestor na top bar a padding
 
         setupTimer(); // nastavenie časovača
@@ -153,7 +153,7 @@ public class Main extends Application {
         boolean isMine = false;
         boolean isRevealed = false;
         boolean isFlagged = false;
-        int adjacentMines = 0;
+        int adjacentMines = 0;              // koľko má susedov
         Button button = new Button();       // vizuálne zobrazenie políčka
         Image flag = new Image(Objects.requireNonNull(getClass().getResourceAsStream("flag.png")));
         ImageView flagImage = new ImageView(flag);
@@ -297,7 +297,7 @@ public class Main extends Application {
 
     // Zobrazenie výslednej obrazovky po výhre alebo prehre
     private void showGameOverScreen(String message) {
-        GameOverScreen gameOverScreen = new GameOverScreen(primaryStage, rows, cols, mines, getTime(secondsElapsed), message);
+        GameOverScreen gameOverScreen = new GameOverScreen(primaryStage, rows, cols, mines, clickCount, getTime(secondsElapsed), message);
         gameOverScreen.displayGameOverScreen();
     }
 

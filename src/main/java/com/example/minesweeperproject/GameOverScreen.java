@@ -15,15 +15,17 @@ public class GameOverScreen extends Application {
     private int rows;
     private int cols;
     private int mines;
+    private int clicks;
     private String time;
     private String message;
 
     // Konštruktor pre vytvorenie obrazovky Game Over s parametrami hry
-    public GameOverScreen(Stage stage, int rows, int cols, int mines, String time, String message) {
+    public GameOverScreen(Stage stage, int rows, int cols, int mines, int clicks, String time, String message) {
         this.primaryStage = stage;
         this.rows = rows;
         this.cols = cols;
         this.mines = mines;
+        this.clicks = clicks;
         this.time = time;
         this.message = message;
     }
@@ -43,7 +45,7 @@ public class GameOverScreen extends Application {
 
         // styly pre cas a nadpis
         String nadpisFont = "-fx-font-size: 40px;";
-        String casFont = "-fx-font-size: 20px;";
+        String font = "-fx-font-size: 20px;";
 
         // Nadpis na vyhru alebo  prehru
         Label gameOverLabel = new Label(message);
@@ -51,7 +53,11 @@ public class GameOverScreen extends Application {
 
         // Zobrazenie casu skoncenia hry
         Label timeLabel = new Label("Time: " + time);
-        timeLabel.setStyle(casFont);
+        timeLabel.setStyle(font);
+
+        // Zobrazenie casu skoncenia hry
+        Label clicksLabel = new Label("Clicks: " + clicks);
+        clicksLabel.setStyle(font);
 
         // Tlačidlo na restart
         Button restartButton = new Button("Restart");
@@ -66,7 +72,7 @@ public class GameOverScreen extends Application {
         exitButton.setOnAction(e -> primaryStage.close());
 
         // pridava prvky do rozlozenia
-        layout.getChildren().addAll(gameOverLabel, timeLabel, restartButton, mainMenuButton, exitButton);
+        layout.getChildren().addAll(gameOverLabel, timeLabel, clicksLabel, restartButton, mainMenuButton, exitButton);
 
         // nastavenie a zobrazenie okna
         Scene scene = new Scene(layout);
