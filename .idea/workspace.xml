@@ -5,9 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b52a91a4-0f1e-48da-a8c5-576612bb4e18" name="Changes" comment="pridanie Main Menu tlačitka na game over screen + Win/Lose label na game over screen">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/minesweeperproject/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/minesweeperproject/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/minesweeperproject/SettingsScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/minesweeperproject/SettingsScreen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/minesweeperproject/MainMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/minesweeperproject/MainMenu.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,12 +21,12 @@
     &quot;assignee&quot;: &quot;NonStopFlame&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/MichaelFrenak/MinesweeperProjectOPG.git&quot;,
-    &quot;accountId&quot;: &quot;d78a5c1e-0cce-4351-b46d-9e61465ebef2&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/MatejLes08/miny.git",
+    "accountId": "44681fef-1938-48f7-9606-a91739b03f29"
   }
-}</component>
+}]]></component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 2
 }</component>
@@ -87,8 +85,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9f38398b9061-18abd8497189-intellij.indexing.shared.core-IU-241.14494.240" />
-        <option value="bundled-js-predefined-1d06a55b98c1-74d2a5396914-JavaScript-IU-241.14494.240" />
+        <option value="bundled-jdk-9823dce3aa75-28b599e66164-intellij.indexing.shared.core-IU-242.24807.4" />
+        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-IU-242.24807.4" />
       </set>
     </attachedChunks>
   </component>
@@ -103,6 +101,7 @@
       <workItem from="1717771663690" duration="3393000" />
       <workItem from="1717847294168" duration="7043000" />
       <workItem from="1717935376286" duration="6408000" />
+      <workItem from="1749153245224" duration="61000" />
     </task>
     <task id="LOCAL-00001" summary="Inicial Commit">
       <option name="closed" value="true" />
