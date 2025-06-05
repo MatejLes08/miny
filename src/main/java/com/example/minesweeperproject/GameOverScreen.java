@@ -43,7 +43,7 @@ public class GameOverScreen extends Application {
         Label gameOverLabel = new Label(message);
         gameOverLabel.setStyle(nadpisFont);
 
-        Label timeLabel = new Label("Celkový čas: " + time);
+        Label timeLabel = new Label("Time: " + time);
         timeLabel.setStyle(casFont);
 
         Button restartButton = new Button("Restart");

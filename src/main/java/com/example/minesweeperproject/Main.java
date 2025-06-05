@@ -139,7 +139,6 @@ public class Main extends Application {
         boolean isRevealed = false;
         boolean isFlagged = false;
         int adjacentMines = 0;
-        int flaggedMines = 0;
         Button button = new Button();
         Image flag = new Image(Objects.requireNonNull(getClass().getResourceAsStream("flag.png")));
         ImageView flagImage = new ImageView(flag);
@@ -174,7 +173,6 @@ public class Main extends Application {
                     toggleFlag();   // vlajka
                     clickCount++;
                     updateClickCountLabel();
-                    winCheck();
                 }
             });
         }
@@ -205,6 +203,8 @@ public class Main extends Application {
                         }
                     }
                 }
+
+                winCheck();
             }
         }
 
@@ -224,21 +224,24 @@ public class Main extends Application {
             updateUnflaggedMinesLabel();
         }
 
-        void winCheck(){
+        void winCheck() {
+            int uncoveredSafeCells = 0;
 
-            // Prejdeme políčkami aby sme spočítali, ktoré polia s minou sú zavlajkované
             for (int row = 0; row < rows; row++) {
-                for (int col = 0; col < cols; col++) {
-                    if (cells[row][col].isMine && cells[row][col].isFlagged) {
-                        flaggedMines += 1;
+                for (int stlpec = 0; stlpec < cols; stlpec++) {
+                    if (!cells[row][stlpec].isMine && cells[row][stlpec].isRevealed) {
+                        uncoveredSafeCells++;
                     }
                 }
             }
 
-            // Ak sú všetky míny zavlajkované, ukončíme hru
-            if (flaggedMines == mines)
+            int totalSafeCells = (rows * cols) - mines;
+
+            if (uncoveredSafeCells == totalSafeCells) {
                 showGameOverScreen("You Win");
+            }
         }
+
     }
 
     private void updateUnflaggedMinesLabel() {
