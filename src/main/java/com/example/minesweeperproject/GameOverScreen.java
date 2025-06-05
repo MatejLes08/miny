@@ -39,7 +39,7 @@ public class GameOverScreen extends Application {
     public void displayGameOverScreen() {
         VBox layout = new VBox(10);
         layout.setPrefSize(450, 360);
-        layout.setAlignment(Pos.CENTER); 
+        layout.setAlignment(Pos.CENTER);
 
         // styly pre cas a nadpis
         String nadpisFont = "-fx-font-size: 40px;";
